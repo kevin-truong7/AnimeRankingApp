@@ -47,7 +47,7 @@ extension AnimeLibrary {
     }
 }
 
-// sample data
+// sample data for functionality testing. Will need to replaced with API data.
 extension AnimeLibrary {
     static let sampleData: [AnimeLibrary] =
     [
