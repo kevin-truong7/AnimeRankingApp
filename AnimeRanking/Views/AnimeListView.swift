@@ -15,10 +15,11 @@ struct AnimeListView: View {
         List {
             ForEach($anime) { $anime in
                 NavigationLink(destination: DetailView(anime: $anime)) {
-                    
+                    CardView(anime: anime)
                 }
             }
         }
+        .navigationTitle("Top Animes")
     }
 }
 

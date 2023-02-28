@@ -16,8 +16,12 @@ struct DetailView: View {
     
     var body: some View {
         List {
-            Section(header: Text("Characters")) {}
-            
+            Section(header: Text("Characters")) {
+                ForEach(anime.characters) {
+                    character in
+                    Label(character.name, systemImage: "person")
+                }
+            }
         }
     }
 }
