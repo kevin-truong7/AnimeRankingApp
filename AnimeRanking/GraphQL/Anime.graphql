@@ -1,0 +1,9 @@
+query LoadAnimesQuery($mediaId: Int) {
+  Media(id: $mediaId) {
+    title {
+      english
+    }
+    averageScore
+    popularity
+  }
+}

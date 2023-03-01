@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A053D0E29AF26EF00C2905C /* ApolloClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A053D0D29AF26EF00C2905C /* ApolloClient.swift */; };
+		0A053D1429AF2C4300C2905C /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A053D1329AF2C4300C2905C /* HomePageViewController.swift */; };
+		0A1CB41E29ADB69300BB1EEE /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 0A1CB41D29ADB69300BB1EEE /* Apollo */; };
+		0A1CB42129ADB75000BB1EEE /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A1CB42029ADB75000BB1EEE /* schema.json */; };
+		0A1CB42329ADB81000BB1EEE /* Anime.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 0A1CB42229ADB81000BB1EEE /* Anime.graphql */; };
+		0A5D70CD29AF2E4D0010B9FF /* AnimeRankingSchema in Frameworks */ = {isa = PBXBuildFile; productRef = 0A5D70CC29AF2E4D0010B9FF /* AnimeRankingSchema */; };
 		0AC5B89529AC2CE800BCED45 /* AnimeRankingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5B89429AC2CE800BCED45 /* AnimeRankingApp.swift */; };
 		0AC5B89729AC2CE800BCED45 /* AnimeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5B89629AC2CE800BCED45 /* AnimeListView.swift */; };
 		0AC5B89929AC2CEB00BCED45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AC5B89829AC2CEB00BCED45 /* Assets.xcassets */; };
@@ -17,6 +23,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A053D0D29AF26EF00C2905C /* ApolloClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloClient.swift; sourceTree = "<group>"; };
+		0A053D1329AF2C4300C2905C /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
+		0A053D1729AF2DD900C2905C /* AnimeRankingSchema */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = AnimeRankingSchema; sourceTree = "<group>"; };
+		0A1CB42029ADB75000BB1EEE /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
+		0A1CB42229ADB81000BB1EEE /* Anime.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Anime.graphql; sourceTree = "<group>"; };
 		0AC5B89129AC2CE800BCED45 /* AnimeRanking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimeRanking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AC5B89429AC2CE800BCED45 /* AnimeRankingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeRankingApp.swift; sourceTree = "<group>"; };
 		0AC5B89629AC2CE800BCED45 /* AnimeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeListView.swift; sourceTree = "<group>"; };
@@ -32,17 +43,61 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A1CB41E29ADB69300BB1EEE /* Apollo in Frameworks */,
+				0A5D70CD29AF2E4D0010B9FF /* AnimeRankingSchema in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A053D0C29AF26D600C2905C /* Apollo */ = {
+			isa = PBXGroup;
+			children = (
+				0A053D0D29AF26EF00C2905C /* ApolloClient.swift */,
+			);
+			path = Apollo;
+			sourceTree = "<group>";
+		};
+		0A053D1229AF2C0B00C2905C /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0A053D1329AF2C4300C2905C /* HomePageViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		0A053D1629AF2DD900C2905C /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				0A053D1729AF2DD900C2905C /* AnimeRankingSchema */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		0A1CB41F29ADB73C00BB1EEE /* GraphQL */ = {
+			isa = PBXGroup;
+			children = (
+				0A1CB42029ADB75000BB1EEE /* schema.json */,
+				0A1CB42229ADB81000BB1EEE /* Anime.graphql */,
+			);
+			path = GraphQL;
+			sourceTree = "<group>";
+		};
+		0A5D70CB29AF2E4D0010B9FF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		0AC5B88829AC2CE800BCED45 = {
 			isa = PBXGroup;
 			children = (
+				0A053D1629AF2DD900C2905C /* Packages */,
 				0AC5B89329AC2CE800BCED45 /* AnimeRanking */,
 				0AC5B89229AC2CE800BCED45 /* Products */,
+				0A5D70CB29AF2E4D0010B9FF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,7 +112,10 @@
 		0AC5B89329AC2CE800BCED45 /* AnimeRanking */ = {
 			isa = PBXGroup;
 			children = (
+				0A053D1229AF2C0B00C2905C /* ViewController */,
+				0A053D0C29AF26D600C2905C /* Apollo */,
 				0AC5B89429AC2CE800BCED45 /* AnimeRankingApp.swift */,
+				0A1CB41F29ADB73C00BB1EEE /* GraphQL */,
 				0AC5B8A329AC2E9D00BCED45 /* Views */,
 				0AC5B8A229AC2E9700BCED45 /* Models */,
 				0AC5B89829AC2CEB00BCED45 /* Assets.xcassets */,
@@ -108,6 +166,10 @@
 			dependencies = (
 			);
 			name = AnimeRanking;
+			packageProductDependencies = (
+				0A1CB41D29ADB69300BB1EEE /* Apollo */,
+				0A5D70CC29AF2E4D0010B9FF /* AnimeRankingSchema */,
+			);
 			productName = AnimeRanking;
 			productReference = 0AC5B89129AC2CE800BCED45 /* AnimeRanking.app */;
 			productType = "com.apple.product-type.application";
@@ -136,6 +198,9 @@
 				Base,
 			);
 			mainGroup = 0AC5B88829AC2CE800BCED45;
+			packageReferences = (
+				0A1CB41C29ADB69300BB1EEE /* XCRemoteSwiftPackageReference "apollo-ios" */,
+			);
 			productRefGroup = 0AC5B89229AC2CE800BCED45 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -150,7 +215,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A1CB42329ADB81000BB1EEE /* Anime.graphql in Resources */,
 				0AC5B89C29AC2CEB00BCED45 /* Preview Assets.xcassets in Resources */,
+				0A1CB42129ADB75000BB1EEE /* schema.json in Resources */,
 				0AC5B89929AC2CEB00BCED45 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -163,10 +230,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AC5B89729AC2CE800BCED45 /* AnimeListView.swift in Sources */,
+				0A053D1429AF2C4300C2905C /* HomePageViewController.swift in Sources */,
 				0AC5B8A729AC357C00BCED45 /* DetailView.swift in Sources */,
 				0AC5B8A529AC2ECB00BCED45 /* AnimeLibrary.swift in Sources */,
 				0AC5B89529AC2CE800BCED45 /* AnimeRankingApp.swift in Sources */,
 				0AC5B8A929AC359E00BCED45 /* CardView.swift in Sources */,
+				0A053D0E29AF26EF00C2905C /* ApolloClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,6 +434,29 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0A1CB41C29ADB69300BB1EEE /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apollographql/apollo-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0A1CB41D29ADB69300BB1EEE /* Apollo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0A1CB41C29ADB69300BB1EEE /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = Apollo;
+		};
+		0A5D70CC29AF2E4D0010B9FF /* AnimeRankingSchema */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AnimeRankingSchema;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0AC5B88929AC2CE800BCED45 /* Project object */;
 }
