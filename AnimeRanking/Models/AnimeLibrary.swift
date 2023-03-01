@@ -16,6 +16,8 @@ struct AnimeLibrary: Identifiable {
         self.id = id
         self.title = title
         self.characters = characters.map { AnimeCharacter(name: $0) }
+        // just for testing, TODO: remove
+        HomePageViewController().queryAllAnime()
     }
 }
 

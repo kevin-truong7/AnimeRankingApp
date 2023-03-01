@@ -14,6 +14,8 @@ struct AnimeRankingApp: App {
     // This will need to be changed later to equal the data from API
     @State private var anime = AnimeLibrary.sampleData
     
+    private var controller = HomePageViewController()
+        
     var body: some Scene {
         WindowGroup {
             NavigationView {
