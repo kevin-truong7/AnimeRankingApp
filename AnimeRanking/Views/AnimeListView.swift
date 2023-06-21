@@ -6,27 +6,36 @@
 //
 
 import SwiftUI
+import AnimeRankingSchema
 
 struct AnimeListView: View {
     
-    @Binding var anime: [AnimeLibrary]
+    @ObservedObject var viewModel: HomeViewModel
+    var mediaType: MediaType
     
+    private let gridColumns = [
+        GridItem(.adaptive(minimum: VListItemView.coverWidth + 15), alignment: .top)
+    ]
+    
+    var trendingMedia: [MediaSortedQuery.Data.Page.Medium?]
+
     var body: some View {
-        List {
-            ForEach($anime) { $anime in
-                NavigationLink(destination: DetailView(anime: $anime)) {
-                    CardView(anime: anime)
+        ScrollView(.vertical) {
+            LazyVGrid(columns: gridColumns) {
+                ForEach(trendingMedia, id: \.?.id) {
+                    if let media = $0 {
+                        VListItemView(title: media.title?.userPreferred ?? "", imageUrl: media.coverImage?.large, meanScore: media.meanScore)
+                    }
                 }
             }
         }
-        .navigationTitle("Top Animes")
     }
 }
 
 struct AnimeListView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            AnimeListView(anime: .constant(AnimeLibrary.sampleData))
+//            AnimeListView(anime: .constant(AnimeLibrary.sampleData))
         }
     }
 }

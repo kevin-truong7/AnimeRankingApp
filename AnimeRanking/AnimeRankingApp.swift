@@ -11,21 +11,42 @@ import SwiftUI
 @main
 struct AnimeRankingApp: App {
     
-    // This will need to be changed later to equal the data from API
-    @State private var anime = AnimeLibrary.sampleData
-    
-    private var controller = HomePageViewController()
+    @StateObject private var viewModel = HomeViewModel()
         
     var body: some Scene {
         WindowGroup {
-            NavigationView {
-                // the parameter anime in the AnimeListView initializer
-                // is expecting a binding to an array of "Anime" objects,
-                // which is represented by the $anime syntax.
-                // A binding is a two-way connection between a view and
-                // a source of truth, such as a property or a state variable.
-                AnimeListView(anime: $anime)
+            // Current anime grouping
+            Group {
+                HStack(alignment: .center) {
+                    Text("Current Animes")
+                        .font(.title2)
+                        .bold()
+                    Spacer()
+                }
+                .padding(.horizontal)
+                .padding(.top, 8)
+                ZStack {
+                    if viewModel.trendingAnimes.count == 0 {
+                        ProgressView()
+                    }
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        LazyHStack(alignment: .top) {
+                            ForEach(viewModel.trendingAnimes, id: \.?.id) {
+                                if let item = $0 {
+                                    VListItemView(title: item.title?.userPreferred ?? "", imageUrl: item.coverImage?.large, meanScore: item.meanScore)
+                                        .padding(.trailing, 4)
+                                }
+                            }
+                        }//:HStack
+                        .padding(.leading, 14)
+                    }//:HScrollView
+                    .frame(minHeight: 180)
+                    .onAppear {
+                        viewModel.getTrendingAnimes()
+                    }
+                }//:ZStack
             }
         }
     }
 }
+

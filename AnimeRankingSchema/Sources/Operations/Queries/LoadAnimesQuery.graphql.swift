@@ -32,7 +32,7 @@ public class LoadAnimesQuery: GraphQLQuery {
 
   public struct Data: AnimeRankingSchema.SelectionSet {
     public let __data: DataDict
-    public init(data: DataDict) { __data = data }
+    public init(_dataDict: DataDict) { __data = _dataDict }
 
     public static var __parentType: ApolloAPI.ParentType { AnimeRankingSchema.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
@@ -47,10 +47,11 @@ public class LoadAnimesQuery: GraphQLQuery {
     /// Parent Type: `Media`
     public struct Media: AnimeRankingSchema.SelectionSet {
       public let __data: DataDict
-      public init(data: DataDict) { __data = data }
+      public init(_dataDict: DataDict) { __data = _dataDict }
 
       public static var __parentType: ApolloAPI.ParentType { AnimeRankingSchema.Objects.Media }
       public static var __selections: [ApolloAPI.Selection] { [
+        .field("__typename", String.self),
         .field("title", Title?.self),
         .field("averageScore", Int?.self),
         .field("popularity", Int?.self),
@@ -68,10 +69,11 @@ public class LoadAnimesQuery: GraphQLQuery {
       /// Parent Type: `MediaTitle`
       public struct Title: AnimeRankingSchema.SelectionSet {
         public let __data: DataDict
-        public init(data: DataDict) { __data = data }
+        public init(_dataDict: DataDict) { __data = _dataDict }
 
         public static var __parentType: ApolloAPI.ParentType { AnimeRankingSchema.Objects.MediaTitle }
         public static var __selections: [ApolloAPI.Selection] { [
+          .field("__typename", String.self),
           .field("english", String?.self),
         ] }
 
