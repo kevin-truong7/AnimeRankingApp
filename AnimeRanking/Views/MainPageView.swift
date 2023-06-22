@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct MainPageView: View {
-    @StateObject private var viewModel = HomeViewModel()
+    @StateObject private var viewModel = MainPageModel()
     
     var body: some View {
         NavigationView {
             // entire view to be vertically scrollable
             VStack(alignment: .center) {
                 // Category Title
-                Text("Current Animes")
+                Text("Current Anime Trend Ranking")
                     .font(.title2)
                     .bold()
 //                    Spacer()
@@ -31,7 +31,7 @@ struct MainPageView: View {
                         LazyVStack {
                             ForEach(viewModel.trendingAnimes, id: \.?.id) {
                                 if let item = $0 {
-                                    VListItemView(title: item.title?.userPreferred ?? "", imageUrl: item.coverImage?.large, meanScore: item.meanScore)
+                                    CardView(title: item.title?.userPreferred ?? "", imageUrl: item.coverImage?.large, meanScore: item.meanScore)
                                         .padding(.trailing, 4)
                                 }
                             }

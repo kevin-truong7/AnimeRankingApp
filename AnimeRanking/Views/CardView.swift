@@ -1,13 +1,13 @@
 //
-//  VListItemView.swift
+//  CardView.swift
 //  AnimeRanking
 //
-//  Created by Kevin Truong on 2023-06-21.
+//  Created by Kevin Truong on 2023-06-22.
 //
 
 import SwiftUI
 
-struct VListItemView: View {
+struct CardView: View {
     static let coverWidth: CGFloat = 90
     static let coverHeight: CGFloat = 130
     
@@ -18,7 +18,7 @@ struct VListItemView: View {
     var body: some View {
         // this is creates the layout for one title
         VStack(alignment: .leading) {
-            MediaCoverView(imageUrl: imageUrl, width: VListItemView.coverWidth, height: VListItemView.coverHeight, cancelOnDisappear: true)
+            AnimeCover(imageUrl: imageUrl, width: CardView.coverWidth, height: CardView.coverHeight, cancelOnDisappear: true)
                 .padding(.top, 4)
             
             Text(title)
@@ -27,7 +27,7 @@ struct VListItemView: View {
                 .multilineTextAlignment(.leading)
                 .foregroundColor(.primary)
                 .padding(.bottom, 1)
-                .frame(width: VListItemView.coverWidth, alignment: .leading)
+                .frame(width: CardView.coverWidth, alignment: .leading)
             
             if meanScore != nil {
                 HStack(alignment: .bottom, spacing: 4) {
@@ -41,18 +41,17 @@ struct VListItemView: View {
                 .padding(.bottom, 1)
             }
         }
-        .frame(minHeight: VListItemView.coverHeight + 54, alignment: .top)
+        .frame(minHeight: CardView.coverHeight + 54, alignment: .top)
     }
 }
 
-struct VListItemView_Previews: PreviewProvider {
+struct CardView_Previews: PreviewProvider {
     static var previews: some View {
         LazyHStack(alignment: .top) {
-            VListItemView(title: "Kimetsu no Yaiba: Katana", imageUrl: "", meanScore: 78)
+            CardView(title: "Kimetsu no Yaiba: Katana", imageUrl: "", meanScore: 78)
                 .previewLayout(.sizeThatFits)
-            VListItemView(title: "One Piece", imageUrl: "")
+            CardView(title: "One Piece", imageUrl: "")
                 .previewLayout(.sizeThatFits)
         }
     }
 }
-

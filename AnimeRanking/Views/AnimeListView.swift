@@ -10,11 +10,11 @@ import AnimeRankingSchema
 
 struct AnimeListView: View {
     
-    @ObservedObject var viewModel: HomeViewModel
+    @ObservedObject var viewModel: MainPageModel
     var mediaType: MediaType
     
     private let gridColumns = [
-        GridItem(.adaptive(minimum: VListItemView.coverWidth + 15), alignment: .top)
+        GridItem(.adaptive(minimum: CardView.coverWidth + 15), alignment: .top)
     ]
     
     var trendingMedia: [MediaSortedQuery.Data.Page.Medium?]
@@ -24,7 +24,7 @@ struct AnimeListView: View {
             LazyVGrid(columns: gridColumns) {
                 ForEach(trendingMedia, id: \.?.id) {
                     if let media = $0 {
-                        VListItemView(title: media.title?.userPreferred ?? "", imageUrl: media.coverImage?.large, meanScore: media.meanScore)
+                        CardView(title: media.title?.userPreferred ?? "", imageUrl: media.coverImage?.large, meanScore: media.meanScore)
                     }
                 }
             }

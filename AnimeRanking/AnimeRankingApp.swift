@@ -11,7 +11,8 @@ import SwiftUI
 @main
 struct AnimeRankingApp: App {
     
-    @StateObject private var viewModel = HomeViewModel()
+    // @StateObject wrapper to be used only once per project, which is responsible for creating the object. All other views that share this object, uses @ObservedObject
+    @StateObject private var viewModel = MainPageModel()
         
     var body: some Scene {
         WindowGroup {

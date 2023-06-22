@@ -17,10 +17,10 @@
 		0A48C9E32A41E00700E93096 /* CurrentAnime.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 0A48C9E22A41E00700E93096 /* CurrentAnime.graphql */; };
 		0A53878B29B277FA00007971 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 0A53878A29B277FA00007971 /* Kingfisher */; };
 		0A5F877429BFAF6800B63C69 /* Apollo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5F877329BFAF6800B63C69 /* Apollo.swift */; };
-		0AA90C7D2A4359060086DEA2 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA90C7C2A4359060086DEA2 /* HomeViewModel.swift */; };
-		0AA90C7F2A436AC50086DEA2 /* VListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA90C7E2A436AC50086DEA2 /* VListItemView.swift */; };
-		0AA90C812A436B0F0086DEA2 /* MediaCoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA90C802A436B0F0086DEA2 /* MediaCoverView.swift */; };
 		0AA90C832A4391550086DEA2 /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA90C822A4391550086DEA2 /* MainPageView.swift */; };
+		0AA90C852A44D8470086DEA2 /* MainPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA90C842A44D8470086DEA2 /* MainPageModel.swift */; };
+		0AA90C892A44DFF10086DEA2 /* AnimeCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA90C882A44DFF10086DEA2 /* AnimeCover.swift */; };
+		0AA90C8B2A44E0830086DEA2 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA90C8A2A44E0830086DEA2 /* CardView.swift */; };
 		0AC5B89529AC2CE800BCED45 /* AnimeRankingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5B89429AC2CE800BCED45 /* AnimeRankingApp.swift */; };
 		0AC5B89729AC2CE800BCED45 /* AnimeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5B89629AC2CE800BCED45 /* AnimeListView.swift */; };
 		0AC5B89929AC2CEB00BCED45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AC5B89829AC2CEB00BCED45 /* Assets.xcassets */; };
@@ -38,10 +38,10 @@
 		0A3FEE7A29B068260098A72E /* AnimeTitles.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = AnimeTitles.graphql; sourceTree = "<group>"; };
 		0A48C9E22A41E00700E93096 /* CurrentAnime.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CurrentAnime.graphql; sourceTree = "<group>"; };
 		0A5F877329BFAF6800B63C69 /* Apollo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apollo.swift; sourceTree = "<group>"; };
-		0AA90C7C2A4359060086DEA2 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		0AA90C7E2A436AC50086DEA2 /* VListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VListItemView.swift; sourceTree = "<group>"; };
-		0AA90C802A436B0F0086DEA2 /* MediaCoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCoverView.swift; sourceTree = "<group>"; };
 		0AA90C822A4391550086DEA2 /* MainPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageView.swift; sourceTree = "<group>"; };
+		0AA90C842A44D8470086DEA2 /* MainPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageModel.swift; sourceTree = "<group>"; };
+		0AA90C882A44DFF10086DEA2 /* AnimeCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeCover.swift; sourceTree = "<group>"; };
+		0AA90C8A2A44E0830086DEA2 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		0AC5B89129AC2CE800BCED45 /* AnimeRanking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimeRanking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AC5B89429AC2CE800BCED45 /* AnimeRankingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeRankingApp.swift; sourceTree = "<group>"; };
 		0AC5B89629AC2CE800BCED45 /* AnimeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeListView.swift; sourceTree = "<group>"; };
@@ -154,7 +154,8 @@
 			isa = PBXGroup;
 			children = (
 				0AC5B8A429AC2ECB00BCED45 /* AnimeLibrary.swift */,
-				0AA90C7C2A4359060086DEA2 /* HomeViewModel.swift */,
+				0AA90C842A44D8470086DEA2 /* MainPageModel.swift */,
+				0AA90C882A44DFF10086DEA2 /* AnimeCover.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -164,8 +165,7 @@
 			children = (
 				0AA90C822A4391550086DEA2 /* MainPageView.swift */,
 				0AC5B89629AC2CE800BCED45 /* AnimeListView.swift */,
-				0AA90C7E2A436AC50086DEA2 /* VListItemView.swift */,
-				0AA90C802A436B0F0086DEA2 /* MediaCoverView.swift */,
+				0AA90C8A2A44E0830086DEA2 /* CardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -254,15 +254,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0AA90C7D2A4359060086DEA2 /* HomeViewModel.swift in Sources */,
+				0AA90C892A44DFF10086DEA2 /* AnimeCover.swift in Sources */,
 				0AC5B89729AC2CE800BCED45 /* AnimeListView.swift in Sources */,
 				0AA90C832A4391550086DEA2 /* MainPageView.swift in Sources */,
 				0A053D1429AF2C4300C2905C /* APIData.swift in Sources */,
 				0A5F877429BFAF6800B63C69 /* Apollo.swift in Sources */,
-				0AA90C7F2A436AC50086DEA2 /* VListItemView.swift in Sources */,
-				0AA90C812A436B0F0086DEA2 /* MediaCoverView.swift in Sources */,
+				0AA90C852A44D8470086DEA2 /* MainPageModel.swift in Sources */,
 				0AC5B8A529AC2ECB00BCED45 /* AnimeLibrary.swift in Sources */,
 				0AC5B89529AC2CE800BCED45 /* AnimeRankingApp.swift in Sources */,
+				0AA90C8B2A44E0830086DEA2 /* CardView.swift in Sources */,
 				0A053D0E29AF26EF00C2905C /* Network.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

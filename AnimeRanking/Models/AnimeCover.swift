@@ -1,8 +1,8 @@
 //
-//  MediaCoverView.swift
+//  AnimeCover.swift
 //  AnimeRanking
 //
-//  Created by Kevin Truong on 2023-06-21.
+//  Created by Kevin Truong on 2023-06-22.
 //
 
 import SwiftUI
@@ -18,7 +18,7 @@ extension KFImage {
     }
 }
 
-struct MediaCoverView: View {
+struct AnimeCover: View {
     
     var imageUrl: String?
     var width: CGFloat
@@ -32,10 +32,11 @@ struct MediaCoverView: View {
     }
 }
 
-struct MediaCoverView_Previews: PreviewProvider {
+struct AnimeCover_Previews: PreviewProvider {
     static var previews: some View {
-        MediaCoverView(width: 73, height: 110)
+        AnimeCover(width: 73, height: 110)
             .previewLayout(.sizeThatFits)
     }
 }
+
 
