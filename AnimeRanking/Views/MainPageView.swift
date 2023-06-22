@@ -12,41 +12,39 @@ struct MainPageView: View {
     
     var body: some View {
         NavigationView {
-            ScrollView(.vertical, showsIndicators: false) {
-                LazyVStack(alignment: .leading) {
-                    Group {
-                        HStack(alignment: .center) {
-                            Text("Current Animes")
-                                .font(.title2)
-                                .bold()
-                            Spacer()
-                        }
-                        .padding(.horizontal)
-                        .padding(.top, 8)
-                        ZStack {
-                            if viewModel.trendingAnimes.count == 0 {
-                                ProgressView()
-                            }
-                            ScrollView(.horizontal, showsIndicators: false) {
-                                LazyHStack(alignment: .top) {
-                                    ForEach(viewModel.trendingAnimes, id: \.?.id) {
-                                        if let item = $0 {
-                                            VListItemView(title: item.title?.userPreferred ?? "", imageUrl: item.coverImage?.large, meanScore: item.meanScore)
-                                                .padding(.trailing, 4)
-                                        }
-                                    }
-                                }//:HStack
-                                .padding(.leading, 14)
-                            }//:HScrollView
-                            .frame(minHeight: 180)
-                            .onAppear {
-                                viewModel.getTrendingAnimes()
-                            }
-                        }//:ZStack
+            // entire view to be vertically scrollable
+            VStack(alignment: .center) {
+                // Category Title
+                Text("Current Animes")
+                    .font(.title2)
+                    .bold()
+//                    Spacer()
+//                        .padding(.horizontal)
+//                        .padding(.bottom, 8)
+                ZStack {
+                    if viewModel.trendingAnimes.count == 0 {
+                        ProgressView()
                     }
-                }
-            }
-        }
+                    // showsIndicators set to false to hide scrollbar
+                    ScrollView(.vertical, showsIndicators: false) {
+                        // VStack to make set of anime titles to be presented in a vertical scroll
+                        LazyVStack {
+                            ForEach(viewModel.trendingAnimes, id: \.?.id) {
+                                if let item = $0 {
+                                    VListItemView(title: item.title?.userPreferred ?? "", imageUrl: item.coverImage?.large, meanScore: item.meanScore)
+                                        .padding(.trailing, 4)
+                                }
+                            }
+                        }//:HStack
+                        .padding(.leading, 14)
+                    }//:HScrollView
+                    .frame(minHeight: 180)
+                    .onAppear {
+                        viewModel.getTrendingAnimes()
+                    }
+                } // ZStack
+            } // VStack
+        } // NavigationView
     }
 }
 

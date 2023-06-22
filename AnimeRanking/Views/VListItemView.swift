@@ -31,7 +31,7 @@ struct VListItemView: View {
             
             if meanScore != nil {
                 HStack(alignment: .bottom, spacing: 4) {
-                    Image(systemName: "star.fill")
+                    Image(systemName: "hand.thumbsup.fill")
                         .font(.footnote)
                         .foregroundColor(.gray)
                     Text("\(meanScore!)%")
