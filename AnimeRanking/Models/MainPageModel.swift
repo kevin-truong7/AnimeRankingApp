@@ -14,12 +14,17 @@ import AnimeRankingSchema
 class MainPageModel: ObservableObject {
     private let now = Date.now
     
-    // current anime model
+    // current anime model displayed on the main page. Use this model to fetch api for all data to be displayed on the main page?
     var pageTrendingAnime = 1
     var hasNextPageTrendingAnime = true
+    var pageAnimeDescription = 1
+    
     
     // @Published used so that SwiftUI will automatically monitor for changes, and reinvoke the body property of any views that rely on the data
+    // MediaSortedQuery.Data.Page.Medium is written in this way to access data within the structure. It is visualized as digging deeper through the curly braces
     @Published var trendingAnimes = [MediaSortedQuery.Data.Page.Medium?]()
+
+    @Published var animeGenre = MediaSortedQuery.Data.Page.Medium?.self
     
     func getTrendingAnimes(page: Int = 1) {
         Network.shared.apollo.fetch(query: MediaSortedQuery(page: .some(page), perPage: .some(10), type: .some(.case(.anime)), sort: .some([.case(.trendingDesc)]))) { [weak self] result in
@@ -37,4 +42,11 @@ class MainPageModel: ObservableObject {
             }
         }
     }
+    
+
+//    var genresFormatted: String? {
+//        guard trendingAnimes != nil else { return nil }
+//        guard trendingAnimes.genres != nil else { return nil }
+//        return trendingAnimes.genres!.compactMap { $0 }.joined(separator: ", ")
+//    }
 }

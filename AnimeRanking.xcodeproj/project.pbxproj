@@ -82,6 +82,15 @@
 			name = Packages;
 			sourceTree = "<group>";
 		};
+		0A14AFD72A4A06BA000A8D6C /* Unused */ = {
+			isa = PBXGroup;
+			children = (
+				0AC5B89629AC2CE800BCED45 /* AnimeListView.swift */,
+				0AC5B8A429AC2ECB00BCED45 /* AnimeLibrary.swift */,
+			);
+			path = Unused;
+			sourceTree = "<group>";
+		};
 		0A1CB41F29ADB73C00BB1EEE /* GraphQL */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				0AC5B89429AC2CE800BCED45 /* AnimeRankingApp.swift */,
+				0A14AFD72A4A06BA000A8D6C /* Unused */,
 				0A53878129B2687E00007971 /* Network */,
 				0A053D0C29AF26D600C2905C /* Apollo */,
 				0A1CB41F29ADB73C00BB1EEE /* GraphQL */,
@@ -153,7 +163,6 @@
 		0AC5B8A229AC2E9700BCED45 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				0AC5B8A429AC2ECB00BCED45 /* AnimeLibrary.swift */,
 				0AA90C842A44D8470086DEA2 /* MainPageModel.swift */,
 				0AA90C882A44DFF10086DEA2 /* AnimeCover.swift */,
 			);
@@ -164,7 +173,6 @@
 			isa = PBXGroup;
 			children = (
 				0AA90C822A4391550086DEA2 /* MainPageView.swift */,
-				0AC5B89629AC2CE800BCED45 /* AnimeListView.swift */,
 				0AA90C8A2A44E0830086DEA2 /* CardView.swift */,
 			);
 			path = Views;

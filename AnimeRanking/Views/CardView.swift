@@ -14,44 +14,56 @@ struct CardView: View {
     var title: String
     var imageUrl: String?
     var meanScore: Int?
+    var description: String
     
     var body: some View {
-        // this is creates the layout for one title
-        VStack(alignment: .leading) {
+
+        // information displayed and laid out in cardview
+        HStack {
             AnimeCover(imageUrl: imageUrl, width: CardView.coverWidth, height: CardView.coverHeight, cancelOnDisappear: true)
-                .padding(.top, 4)
-            
-            Text(title)
-                .font(.system(size: 15))
-                .lineLimit(2)
-                .multilineTextAlignment(.leading)
-                .foregroundColor(.primary)
-                .padding(.bottom, 1)
-                .frame(width: CardView.coverWidth, alignment: .leading)
-            
-            if meanScore != nil {
-                HStack(alignment: .bottom, spacing: 4) {
-                    Image(systemName: "hand.thumbsup.fill")
-                        .font(.footnote)
-                        .foregroundColor(.gray)
-                    Text("\(meanScore!)%")
-                        .font(.footnote)
-                        .foregroundColor(.gray)
+//                .padding(.top, 4)
+            VStack(alignment: .leading) {
+                Text(title)
+                    .font(.system(size: 15))
+                    .lineLimit(2)
+                    .multilineTextAlignment(.leading)
+                    .foregroundColor(.primary)
+                    .padding(.bottom, 1)
+                    .frame(width: CardView.coverWidth, alignment: .leading)
+                
+                if meanScore != nil {
+                    HStack(alignment: .bottom, spacing: 4) {
+                        Image(systemName: "hand.thumbsup.fill")
+                            .font(.footnote)
+                            .foregroundColor(.gray)
+                        Text("\(meanScore!)%")
+                            .font(.footnote)
+                            .foregroundColor(.gray)
+                    }
+                    .padding(.bottom, 1)
                 }
-                .padding(.bottom, 1)
+                Text(description)
+                    .multilineTextAlignment(.leading)
+
             }
-        }
-        .frame(minHeight: CardView.coverHeight + 54, alignment: .top)
+            .frame(minHeight: CardView.coverHeight + 54, alignment: .top)
+        } // HStack
+//        .background(.cyan)
+        .cornerRadius(20) /// make the background rounded
+        .overlay( /// apply a rounded border
+            RoundedRectangle(cornerRadius: 20)
+                .stroke(.black, lineWidth: 5)
+        )
     }
 }
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
         LazyHStack(alignment: .top) {
-            CardView(title: "Kimetsu no Yaiba: Katana", imageUrl: "", meanScore: 78)
+            CardView(title: "Kimetsu no Yaiba: Katana", imageUrl: "", meanScore: 78, description: "this anime...")
                 .previewLayout(.sizeThatFits)
-            CardView(title: "One Piece", imageUrl: "")
-                .previewLayout(.sizeThatFits)
+//            CardView(title: "One Piece", imageUrl: "")
+//                .previewLayout(.sizeThatFits)
         }
     }
 }

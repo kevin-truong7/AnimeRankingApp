@@ -13,6 +13,8 @@
               large
             }
             meanScore
+            genres
+            description
           }
           pageInfo {
             __typename

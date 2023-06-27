@@ -31,11 +31,13 @@ struct MainPageView: View {
                         LazyVStack {
                             ForEach(viewModel.trendingAnimes, id: \.?.id) {
                                 if let item = $0 {
-                                    CardView(title: item.title?.userPreferred ?? "", imageUrl: item.coverImage?.large, meanScore: item.meanScore)
+                                    // userPreferred is written to follow the query format. refer to MediaSortedQuery
+                                    CardView(title: item.title?.userPreferred ?? "",  imageUrl: item.coverImage?.large, meanScore: item.meanScore, description: item.description ?? "")
                                         .padding(.trailing, 4)
+                                        .padding()
                                 }
                             }
-                        }//:HStack
+                        }//:VStack
                         .padding(.leading, 14)
                     }//:HScrollView
                     .frame(minHeight: 180)

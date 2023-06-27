@@ -23,6 +23,8 @@ public class MediaSortedQuery: GraphQLQuery {
               large
             }
             meanScore
+            genres
+            description
           }
           pageInfo {
             __typename
@@ -107,6 +109,8 @@ public class MediaSortedQuery: GraphQLQuery {
           .field("title", Title?.self),
           .field("coverImage", CoverImage?.self),
           .field("meanScore", Int?.self),
+          .field("genres", [String?]?.self),
+          .field("description", String?.self),
         ] }
 
         /// The id of the media
@@ -117,6 +121,10 @@ public class MediaSortedQuery: GraphQLQuery {
         public var coverImage: CoverImage? { __data["coverImage"] }
         /// Mean score of all the user's scores of the media
         public var meanScore: Int? { __data["meanScore"] }
+        /// The genres of the media
+        public var genres: [String?]? { __data["genres"] }
+        /// Short description of the media's story and characters
+        public var description: String? { __data["description"] }
 
         /// Page.Medium.Title
         ///
