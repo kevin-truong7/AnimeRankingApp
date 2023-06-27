@@ -14,13 +14,14 @@ extension KFImage {
             .resizable()
             .scaledToFill()
             .frame(width: width, height: height)
-            .clipShape(RoundedRectangle(cornerRadius: 8))
+            .clipShape(RoundedRectangle(cornerRadius: 10))
     }
 }
 
 struct AnimeCover: View {
     
     var imageUrl: String?
+    // CGFloat sets the limits of x and y as a function of x and y in scalar values
     var width: CGFloat
     var height: CGFloat
     var cancelOnDisappear = false

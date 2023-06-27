@@ -42,11 +42,4 @@ class MainPageModel: ObservableObject {
             }
         }
     }
-    
-
-//    var genresFormatted: String? {
-//        guard trendingAnimes != nil else { return nil }
-//        guard trendingAnimes.genres != nil else { return nil }
-//        return trendingAnimes.genres!.compactMap { $0 }.joined(separator: ", ")
-//    }
 }

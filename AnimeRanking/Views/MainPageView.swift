@@ -16,6 +16,8 @@ struct MainPageView: View {
             VStack(alignment: .center) {
                 // Category Title
                 Text("Current Anime Trend Ranking")
+                    .background(.white)
+//                    .frame(minWidth: 100, maxWidth: .infinity, minHeight: 100, maxHeight: 300)
                     .font(.title2)
                     .bold()
 //                    Spacer()
@@ -38,14 +40,19 @@ struct MainPageView: View {
                                 }
                             }
                         }//:VStack
-                        .padding(.leading, 14)
+                        .padding(.leading, 5)
                     }//:HScrollView
                     .frame(minHeight: 180)
                     .onAppear {
                         viewModel.getTrendingAnimes()
                     }
                 } // ZStack
+                .background(
+                Image("Demon Slayer Wallpaper")
+                    .resizable())
+                .ignoresSafeArea(.all, edges: .bottom)
             } // VStack
+            
         } // NavigationView
     }
 }

@@ -20,16 +20,20 @@ struct CardView: View {
 
         // information displayed and laid out in cardview
         HStack {
-            AnimeCover(imageUrl: imageUrl, width: CardView.coverWidth, height: CardView.coverHeight, cancelOnDisappear: true)
-//                .padding(.top, 4)
+            VStack{
+                AnimeCover(imageUrl: imageUrl, width: CardView.coverWidth, height: CardView.coverHeight, cancelOnDisappear: true)
+    //                .padding(1)
+            }
+            .padding(.leading, 22)
             VStack(alignment: .leading) {
                 Text(title)
-                    .font(.system(size: 15))
+                    .font(.system(size: 20))
                     .lineLimit(2)
                     .multilineTextAlignment(.leading)
                     .foregroundColor(.primary)
-                    .padding(.bottom, 1)
-                    .frame(width: CardView.coverWidth, alignment: .leading)
+//                    .padding(.bottom, 1)
+//                    .padding()
+//                    .frame(width: CardView.coverWidth, alignment: .leading)
                 
                 if meanScore != nil {
                     HStack(alignment: .bottom, spacing: 4) {
@@ -44,15 +48,18 @@ struct CardView: View {
                 }
                 Text(description)
                     .multilineTextAlignment(.leading)
+                    .lineLimit(10)
 
             }
+            .padding()
             .frame(minHeight: CardView.coverHeight + 54, alignment: .top)
-        } // HStack
-//        .background(.cyan)
+        } // HStack - Houses the entire card
+        .background(.white)
         .cornerRadius(20) /// make the background rounded
         .overlay( /// apply a rounded border
             RoundedRectangle(cornerRadius: 20)
-                .stroke(.black, lineWidth: 5)
+                .stroke(.black, lineWidth: 1)
+                .shadow(radius: 20)
         )
     }
 }
