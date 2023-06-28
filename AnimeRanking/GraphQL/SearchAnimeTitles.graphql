@@ -1,0 +1,9 @@
+query SearchAnimeTitles {
+  Page {
+    media {
+      title {
+        english
+      }
+    }
+  }
+}

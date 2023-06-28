@@ -11,21 +11,13 @@ import SwiftUI
 @main
 struct AnimeRankingApp: App {
     
-    // This will need to be changed later to equal the data from API
-    @State private var anime = AnimeLibrary.sampleData
-    
-    private var controller = HomePageViewController()
+    // @StateObject wrapper to be used only once per project, which is responsible for creating the object. All other views that share this object, uses @ObservedObject
+    @StateObject private var viewModel = MainPageModel()
         
     var body: some Scene {
         WindowGroup {
-            NavigationView {
-                // the parameter anime in the AnimeListView initializer
-                // is expecting a binding to an array of "Anime" objects,
-                // which is represented by the $anime syntax.
-                // A binding is a two-way connection between a view and
-                // a source of truth, such as a property or a state variable.
-                AnimeListView(anime: $anime)
-            }
+           MainPageView()
         }
     }
 }
+

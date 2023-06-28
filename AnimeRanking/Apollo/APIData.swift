@@ -7,8 +7,9 @@
 
 import Foundation
 import AnimeRankingSchema
+import Apollo
 
-struct HomePageViewController {
+struct APIData {
     
     func queryAllAnime() {
         apolloClient.fetch(query: LoadAnimesQuery(mediaId: 1)) { result in
@@ -16,5 +17,4 @@ struct HomePageViewController {
             print(data)
         }
     }
-
 }

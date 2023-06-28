@@ -1,0 +1,25 @@
+      query MediaSorted($page: Int, $perPage: Int, $type: MediaType, $sort: [MediaSort]) {
+        Page(page: $page, perPage: $perPage) {
+          __typename
+          media(type: $type, sort: $sort) {
+            __typename
+            id
+            title {
+              __typename
+              userPreferred
+            }
+            coverImage {
+              __typename
+              large
+            }
+            meanScore
+            genres
+            description
+          }
+          pageInfo {
+            __typename
+            currentPage
+            hasNextPage
+          }
+        }
+      }

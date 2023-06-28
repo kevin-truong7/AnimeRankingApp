@@ -1,0 +1,30 @@
+fragment MediaFragment on Media {
+    id
+    title {
+      english
+    }
+    coverImage {
+        large
+    }
+    averageScore
+    popularity
+    characters {
+      nodes {
+        name {
+          full
+        }
+      }
+    }
+}
+
+query LoadAnimeTitleQuery(
+  $page: Int,
+  $perPage: Int,
+  $sort: [MediaSort],
+) {
+  Page(page: $page, perPage: $perPage) {
+    media(type: ANIME, sort: $sort) {
+      ...MediaFragment
+    }
+  }
+}

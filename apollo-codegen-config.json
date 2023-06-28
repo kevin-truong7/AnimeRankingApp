@@ -5,7 +5,7 @@
       "**/*.graphql"
     ],
     "schemaSearchPaths" : [
-      "**/schema.json"
+      "./AnimeRanking/GraphQL/**/*.json"
     ]
   },
   "output" : {
