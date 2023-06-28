@@ -28,12 +28,12 @@
       }
     },
     {
-      "identity" : "richtextkit",
+      "identity" : "richtext",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/danielsaidi/RichTextKit.git",
+      "location" : "https://github.com/NuPlay/RichText.git",
       "state" : {
-        "revision" : "836ee7b701107490a0eafd2e4ad6b1558bba5e60",
-        "version" : "0.7.2"
+        "revision" : "6e14ec7130bf82284c83c1b248954a87b72378d6",
+        "version" : "2.2.1"
       }
     },
     {
