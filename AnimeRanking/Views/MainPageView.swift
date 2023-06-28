@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MainPageView: View {
+    // a private stateo object variable that uses the fetching functions of MainPageModel()
     @StateObject private var viewModel = MainPageModel()
     
     var body: some View {

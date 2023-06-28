@@ -16,8 +16,9 @@ struct CardView: View {
     var meanScore: Int?
     var description: String
     
+    @State private var isPresentingDescriptionView = false
+    
     var body: some View {
-
         // information displayed and laid out in cardview
         HStack {
             VStack{
@@ -28,18 +29,16 @@ struct CardView: View {
             VStack(alignment: .leading) {
                 Text(title)
                     .font(.system(size: 20))
-                    .lineLimit(2)
+                    .lineLimit(3)
                     .multilineTextAlignment(.leading)
                     .foregroundColor(.primary)
-//                    .padding(.bottom, 1)
-//                    .padding()
-//                    .frame(width: CardView.coverWidth, alignment: .leading)
                 
+                // if function in case some animes do not have a rating
                 if meanScore != nil {
                     HStack(alignment: .bottom, spacing: 4) {
                         Image(systemName: "hand.thumbsup.fill")
                             .font(.footnote)
-                            .foregroundColor(.gray)
+                            .foregroundColor(.yellow)
                         Text("\(meanScore!)%")
                             .font(.footnote)
                             .foregroundColor(.gray)
@@ -48,18 +47,38 @@ struct CardView: View {
                 }
                 Text(description)
                     .multilineTextAlignment(.leading)
-                    .lineLimit(10)
-
+                    .lineLimit(5)
+                
+                // Button that shows full description
+                Button("Read More") {
+                    isPresentingDescriptionView = true
+                    
+                }
+                .sheet(isPresented: $isPresentingDescriptionView) {
+                    NavigationView {
+                        // passes the defined description variable to the detailDescription parameter of the detailsview to be displayed in a different format. Does not need $ binding the description is coming from the same source.
+                        DetailsView(detailDescription: description)
+                            .navigationTitle("Description")
+                            .toolbar {
+                                ToolbarItem(placement: .cancellationAction) {
+                                    Button("Back") {
+                                        isPresentingDescriptionView = false
+                                    }
+                                }
+                            }
+                    } // :NavigationView
+                } // :sheet
             }
             .padding()
             .frame(minHeight: CardView.coverHeight + 54, alignment: .top)
-        } // HStack - Houses the entire card
+        } // :HStack - Houses the entire card
         .background(.white)
-        .cornerRadius(20) /// make the background rounded
-        .overlay( /// apply a rounded border
+        .opacity(0.9)
+        .cornerRadius(20) // makes the background rounded. needs to match the RoundedRectangle in this configuration, since the borders overlap
+        .overlay( // applies a rounded border
             RoundedRectangle(cornerRadius: 20)
                 .stroke(.black, lineWidth: 1)
-                .shadow(radius: 20)
+//                .shadow(radius: 20)
         )
     }
 }
