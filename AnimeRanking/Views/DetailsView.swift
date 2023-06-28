@@ -24,7 +24,6 @@ struct DetailsView: View {
         }
         .background(
         Image("light-pink")
-            .resizable()
             .ignoresSafeArea(.all, edges: .all))
         
     }
