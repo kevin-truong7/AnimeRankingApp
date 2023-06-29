@@ -15,9 +15,15 @@ struct DetailsView: View {
     @Environment(\.dismiss) private var dismiss
     
     var detailDescription: String
+    var detailTitle: String
     
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
+            Text(detailTitle)
+                .font(.system(size: 20))
+                .bold()
+                .padding([.bottom, .top], 1)
+                .padding(.leading, 5)
             ScrollView {
                 RichText(html: detailDescription)
             }

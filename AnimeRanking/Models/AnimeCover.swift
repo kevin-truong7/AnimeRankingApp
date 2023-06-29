@@ -13,7 +13,8 @@ extension KFImage {
         self
             .resizable()
             .scaledToFill()
-            .frame(width: width, height: height)
+            // orginal -> width: width, height: height
+            .frame(width: 110, height: 200)
             .clipShape(RoundedRectangle(cornerRadius: 10))
     }
 }

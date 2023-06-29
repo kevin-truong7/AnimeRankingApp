@@ -27,13 +27,16 @@ struct CardView: View {
                 AnimeCover(imageUrl: imageUrl, width: CardView.coverWidth, height: CardView.coverHeight, cancelOnDisappear: true)
     //                .padding(1)
             }
-            .padding(.leading, 22)
+            .padding(.leading, 10)
             VStack(alignment: .leading) {
                 Text(title)
+                    /// need to include alignment in frame for it to work properly
+                    .frame(maxWidth: 170, alignment: .leading)
                     .font(.system(size: 20))
-                    .lineLimit(3)
+                    .lineLimit(5)
                     .multilineTextAlignment(.leading)
                     .foregroundColor(.primary)
+                    .bold()
                 
                 // if function in case some animes do not have a rating
                 if meanScore != nil {
@@ -45,13 +48,14 @@ struct CardView: View {
                             .font(.footnote)
                             .foregroundColor(.gray)
                     }
-                    .padding(.bottom, 1)
                 }
                 
                 /// Genres
                 /// The ! is used to abort operation if the value of optional is nil. The ?? is used to provide a default value if the operational is nil
                 Group {
-                    Text("Genre")
+                    Text("Genre:")
+                        .bold()
+                        .padding(.top, 1)
                     ForEach(genre.indices) {
                         Text(self.genre[$0] ?? "")
                     }
@@ -74,7 +78,7 @@ struct CardView: View {
                 .sheet(isPresented: $isPresentingDescriptionView) {
                     NavigationView {
                         // passes the defined description variable to the detailDescription parameter of the detailsview to be displayed in a different format. Does not need $ binding the description is coming from the same source.
-                        DetailsView(detailDescription: description)
+                        DetailsView(detailDescription: description, detailTitle: title)
                             .navigationTitle("Description")
                             .toolbar {
                                 ToolbarItem(placement: .cancellationAction) {
@@ -89,7 +93,8 @@ struct CardView: View {
             .padding()
             .frame(minHeight: CardView.coverHeight + 54, alignment: .top)
         } // :HStack - Houses the entire card
-        .frame(minWidth: 340)
+        .padding([.bottom, .top], 10)
+        .frame(minWidth: 340, maxWidth: 340)
         .background(.white)
         .opacity(0.9)
         .cornerRadius(20) // makes the background rounded. needs to match the RoundedRectangle in this configuration, since the borders overlap
@@ -98,7 +103,7 @@ struct CardView: View {
                 .stroke(.black, lineWidth: 1)
 //                .shadow(radius: 20)
         )
-    }
+    } // :Body View
 }
 
 struct CardView_Previews: PreviewProvider {
