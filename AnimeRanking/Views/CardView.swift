@@ -33,7 +33,7 @@ struct CardView: View {
                     /// need to include alignment in frame for it to work properly
                     .frame(maxWidth: 170, alignment: .leading)
                     .font(.system(size: 20))
-                    .lineLimit(5)
+                    .lineLimit(3)
                     .multilineTextAlignment(.leading)
                     .foregroundColor(.primary)
                     .bold()

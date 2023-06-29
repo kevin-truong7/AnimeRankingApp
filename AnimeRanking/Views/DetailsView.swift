@@ -22,12 +22,11 @@ struct DetailsView: View {
             Text(detailTitle)
                 .font(.system(size: 20))
                 .bold()
-                .padding([.bottom, .top], 1)
-                .padding(.leading, 5)
-            ScrollView {
+                .padding(.leading, 15)
+            ScrollView(showsIndicators: false) {
                 RichText(html: detailDescription)
             }
-            .padding()
+            .padding([.top, .leading, .trailing])
 //            .frame(maxHeight: 600, alignment: .top)
         }
         .background(
