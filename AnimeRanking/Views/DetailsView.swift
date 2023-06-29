@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+// Package converts html formatted text to user friendly text
+import RichText
 
 struct DetailsView: View {
     
@@ -17,7 +19,7 @@ struct DetailsView: View {
     var body: some View {
         VStack {
             ScrollView {
-                Text(detailDescription)
+                RichText(html: detailDescription)
             }
             .padding()
 //            .frame(maxHeight: 600, alignment: .top)

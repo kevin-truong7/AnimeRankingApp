@@ -19,6 +19,7 @@
 		0A53878B29B277FA00007971 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 0A53878A29B277FA00007971 /* Kingfisher */; };
 		0A5F877429BFAF6800B63C69 /* Apollo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5F877329BFAF6800B63C69 /* Apollo.swift */; };
 		0A8C08002A4C9DE80064D6EF /* RichText in Frameworks */ = {isa = PBXBuildFile; productRef = 0A8C07FF2A4C9DE80064D6EF /* RichText */; };
+		0A8C08022A4CC5F00064D6EF /* ExtraFunctionality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8C08012A4CC5F00064D6EF /* ExtraFunctionality.swift */; };
 		0AA90C832A4391550086DEA2 /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA90C822A4391550086DEA2 /* MainPageView.swift */; };
 		0AA90C852A44D8470086DEA2 /* MainPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA90C842A44D8470086DEA2 /* MainPageModel.swift */; };
 		0AA90C892A44DFF10086DEA2 /* AnimeCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA90C882A44DFF10086DEA2 /* AnimeCover.swift */; };
@@ -41,6 +42,7 @@
 		0A3FEE7A29B068260098A72E /* AnimeTitles.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = AnimeTitles.graphql; sourceTree = "<group>"; };
 		0A48C9E22A41E00700E93096 /* CurrentAnime.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CurrentAnime.graphql; sourceTree = "<group>"; };
 		0A5F877329BFAF6800B63C69 /* Apollo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apollo.swift; sourceTree = "<group>"; };
+		0A8C08012A4CC5F00064D6EF /* ExtraFunctionality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraFunctionality.swift; sourceTree = "<group>"; };
 		0AA90C822A4391550086DEA2 /* MainPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageView.swift; sourceTree = "<group>"; };
 		0AA90C842A44D8470086DEA2 /* MainPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageModel.swift; sourceTree = "<group>"; };
 		0AA90C882A44DFF10086DEA2 /* AnimeCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeCover.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 			children = (
 				0AA90C842A44D8470086DEA2 /* MainPageModel.swift */,
 				0AA90C882A44DFF10086DEA2 /* AnimeCover.swift */,
+				0A8C08012A4CC5F00064D6EF /* ExtraFunctionality.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				0AA90C852A44D8470086DEA2 /* MainPageModel.swift in Sources */,
 				0A27082F2A4B43C2007F430D /* DetailsView.swift in Sources */,
 				0AC5B8A529AC2ECB00BCED45 /* AnimeLibrary.swift in Sources */,
+				0A8C08022A4CC5F00064D6EF /* ExtraFunctionality.swift in Sources */,
 				0AC5B89529AC2CE800BCED45 /* AnimeRankingApp.swift in Sources */,
 				0AA90C8B2A44E0830086DEA2 /* CardView.swift in Sources */,
 				0A053D0E29AF26EF00C2905C /* Network.swift in Sources */,

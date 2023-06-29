@@ -35,7 +35,7 @@ struct MainPageView: View {
                             ForEach(viewModel.trendingAnimes, id: \.?.id) {
                                 if let item = $0 {
                                     // userPreferred is written to follow the query format. refer to MediaSortedQuery
-                                    CardView(title: item.title?.userPreferred ?? "",  imageUrl: item.coverImage?.large, meanScore: item.meanScore, description: item.description ?? "")
+                                    CardView(title: item.title?.userPreferred ?? "",  imageUrl: item.coverImage?.large, meanScore: item.meanScore, description: item.description ?? "", genre: item.genres!)
                                         .padding(.trailing, 4)
                                         .padding()
                                 }
