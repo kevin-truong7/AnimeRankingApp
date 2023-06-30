@@ -1,4 +1,4 @@
-# AnimeRankingApp
+# AnimeRankingApp ios
 
 This ios app displays constantly updating trending animes and its information in a list format
 
