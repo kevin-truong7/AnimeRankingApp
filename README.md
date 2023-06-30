@@ -17,7 +17,7 @@ This ios app displays constantly updating trending animes and its information in
 <p float="left">
 <img src="https://github.com/kevin-truong7/AnimeRankingApp/blob/main/AnimeRanking/Assets.xcassets/Git_App.imageset/Git_App.png" width="200" />
 <span />
-<img src="https://github.com/kevin-truong7/AnimeRankingApp/blob/main/AnimeRanking/Assets.xcassets/Git_Desc.imageset/Git_Desc.png" width="197" />
+<img src="" width="197" />
 </p>
 
 
