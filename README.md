@@ -1,6 +1,6 @@
 # AnimeRankingApp
 
-AnimeRankingApp displays constantly updating trending animes and its information in a list format by using the anilist API
+This ios app displays constantly updating trending animes and its information in a list format by using the anilist API
 
 ## Features
 
