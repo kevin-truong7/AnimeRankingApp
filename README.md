@@ -1,15 +1,15 @@
 # AnimeRankingApp ios
 
-This ios app displays up to date trending animes and its information in a list format
+This ios app displays up to date trending animes of the current year and its information in a list format
 
 ## Features
 
+- Application fetches for dara from an anime API using GraphQL and Apollo
 - Designed with SwiftUI
-- Lists out animes in card style format
 - Presents the genres for each anime
 - Uses navigation sheets for full description
 - Shows viewer rating for each presented anime if available
-- Used Apollo GraphQL to create schemas
+
 
 ## API used
 https://anilist.co/
