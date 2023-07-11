@@ -50,15 +50,24 @@ struct CardView: View {
                     }
                 }
                 
+                Text("Genre:")
+                    .bold()
+                    .padding(.top, 1)
                 /// Genres
                 /// The ! is used to abort operation if the value of optional is nil. The ?? is used to provide a default value if the operational is nil
                 Group {
-                    Text("Genre:")
-                        .bold()
-                        .padding(.top, 1)
-                    ForEach(genre.indices) {
-                        Text(self.genre[$0] ?? "")
+//                    Text("Genre:")
+//                        .bold()
+//                        .padding(.top, 1)
+                    /// This works, but its affects code above this within group
+                    ForEach(genre, id: \.self) { string in
+                        Text(string ?? "")
                     }
+                    
+                    /// this works but somtimes app crashes from using this method
+//                    ForEach(genre.indices) {
+//                        Text(self.genre[$0] ?? "")
+//                    }
                 }
                 
 //                Text(description)
