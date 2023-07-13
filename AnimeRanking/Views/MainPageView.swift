@@ -52,11 +52,10 @@ struct MainPageView: View {
                 Image("Demon Slayer Wallpaper")
                     .resizable())
                 .ignoresSafeArea(.all, edges: .bottom)
-            } // VStack
-            
-        } // NavigationView
-    }
-}
+            } //: VStack
+        } //: NavigationView
+    } //: var body
+} //: struct
 
 struct MainPageView_Previews: PreviewProvider {
     static var previews: some View {
