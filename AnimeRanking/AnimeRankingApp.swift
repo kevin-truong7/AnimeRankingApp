@@ -17,7 +17,7 @@ struct AnimeRankingApp: App {
     var body: some Scene {
         WindowGroup {
             /// displays view below during app launch
-           MainPageView()
+           Tabs()
         }
     }
 }

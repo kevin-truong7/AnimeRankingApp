@@ -52,6 +52,8 @@ struct MainPageView: View {
                 Image("Demon Slayer Wallpaper")
                     .resizable())
                 .ignoresSafeArea(.all, edges: .bottom)
+                /// spacer to prevent tab bar from blocking content
+                Spacer()
             } //: VStack
         } //: NavigationView
     } //: var body

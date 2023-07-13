@@ -14,13 +14,16 @@ struct Tabs: View {
             /// one of the tab views to be the main page
             MainPageView()
                 .tabItem {
-                    Label("Trending", systemImage: "house")
+                    Text("Trending")
+                        .font(.title)
                 }
             PopularPageView()
                 .tabItem {
-                    Label("Popular", systemImage: "house")
+                    Text("Popular")
+//                    Label("Popular", systemImage: "house")
                 }
         }
+//        .frame(height: 20)
     }
 }
 
