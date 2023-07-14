@@ -17,7 +17,7 @@ struct PopularPageView: View {
             // entire view to be vertically scrollable
             VStack(alignment: .center) {
                 // Category Title
-                Text("Popularity Ranking")
+                Text("Popular Anime Rank")
                     .background(.white)
 //                    .frame(minWidth: 100, maxWidth: .infinity, minHeight: 100, maxHeight: 300)
                     .font(.title2)
