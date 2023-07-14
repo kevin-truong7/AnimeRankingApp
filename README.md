@@ -9,7 +9,7 @@ This ios app displays up to date trending animes of the current year and its inf
 - Presents the genres for each anime
 - Uses navigation sheets for full description
 - Shows viewer rating for each presented anime if available
-- Designed a tab bar to navigate through different rankings of anime
+- Uses a tab bar to navigate through different rankings of anime
 
 
 ## API used
